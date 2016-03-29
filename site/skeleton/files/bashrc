@@ -11,4 +11,4 @@ fi
 # User specific aliases and functions
 
 # Added for lab 9.3
-/usr/local/bin/cowsay Puppet rancowsay Puppet ran\!\!
+/usr/local/bin/cowsay Puppet ran\!\!
