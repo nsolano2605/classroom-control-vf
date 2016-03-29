@@ -60,4 +60,5 @@ node default {
   include users
   Class { 'skeleton' : }
   Class { 'memcached' : }
+  Class { 'nginx' : }
 }
