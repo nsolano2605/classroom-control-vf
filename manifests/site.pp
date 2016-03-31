@@ -63,7 +63,7 @@ node default {
   include users
   class { 'skeleton' : }
   class { 'memcached' : }
-  class { 'nginx' : }
+  #class { 'nginx' : }
   class { 'users::admins' : }
   #class { 'aliases' : }
 }
