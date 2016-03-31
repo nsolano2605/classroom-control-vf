@@ -63,7 +63,9 @@ node default {
   include users
   class { 'skeleton' : }
   class { 'memcached' : }
-  #class { 'nginx' : }
+  class { 'nginx' : 
+    $root => '/var/www3',
+  }
   class { 'users::admins' : }
   #class { 'aliases' : }
 }

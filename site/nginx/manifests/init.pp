@@ -1,5 +1,5 @@
 class nginx (
-  $root = 'default'
+  $root = 'default',
 ){
   case $::osfamily {
     'redhat','debian' : {
