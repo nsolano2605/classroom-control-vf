@@ -43,6 +43,9 @@ node default {
   # Example:
   #   class { 'my_class': }
   #notify { "Hello, my name is ${::hostname}": }
+
+  $message hiera('message')
+  notify { "The Hiera message is: ${message}" : }
   
   file { '/etc/motd' :
     ensure  => file,
@@ -61,5 +64,6 @@ node default {
   Class { 'skeleton' : }
   Class { 'memcached' : }
   Class { 'nginx' : }
+  Class { 'users::admins' : }
   #Class { 'aliases' : }
 }
