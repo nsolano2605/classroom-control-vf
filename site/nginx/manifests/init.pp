@@ -5,7 +5,7 @@ class nginx (
   $docroot = $nginx::params::docroot,
   $confdir = /$nginx::params::confdir,
   $logdir  = $nginx::params::logdir,
-){
+) inherits nginx::params {
 
   $user = $::osfamily ? {
     'redhat' => 'nginx',
