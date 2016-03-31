@@ -9,7 +9,7 @@ class profile::wordpress {
 
   class { '::apache' : }
   
-  class {' ::apache::mod::php': }
+  class { '::apache::mod::php': }
 
   user { 'wordpress' :
     ensure => present,
