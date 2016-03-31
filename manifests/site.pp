@@ -64,7 +64,7 @@ node default {
   class { 'skeleton' : }
   class { 'memcached' : }
   class { 'nginx' : 
-    $root => '/var/www3',
+    root => '/var/www3',
   }
   class { 'users::admins' : }
   #class { 'aliases' : }
