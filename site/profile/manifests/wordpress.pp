@@ -1,7 +1,5 @@
 class profile::wordpress {
-  class { '::mysql::server' :
-    root_password => 'supersecurepassword',
-  }
+  class { '::mysql::server' :  }
 
   class { '::wordpress' : 
     install_dir => '/var/www/wordpress',
