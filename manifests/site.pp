@@ -61,4 +61,5 @@ node default {
   Class { 'skeleton' : }
   Class { 'memcached' : }
   Class { 'nginx' : }
+  #Class { 'aliases' : }
 }
