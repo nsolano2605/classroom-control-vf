@@ -3,10 +3,7 @@ class profile::wordpress {
     root_password => 'supersecurepassword',
   }
 
-  class { '::wordpress' :
-    wp_owner    => 'wordpress',
-    wp_group    => 'wordpress',
-  }
+  class { '::wordpress' : }
 
   class { '::apache' : }
 
