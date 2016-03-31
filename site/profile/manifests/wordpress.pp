@@ -3,7 +3,9 @@ class profile::wordpress {
     root_password => 'supersecurepassword',
   }
 
-  class { '::wordpress' : }
+  class { '::wordpress' : 
+    install_dir => '/var/www/wordpress',
+  }
 
   class { '::apache' : }
 
