@@ -3,6 +3,10 @@ class profile::wordpress {
   
   class { '::mysql::client' :  }
   
+  class { '::mysql::bindings' :
+    php_enable => true,
+  }
+  
   class { '::wordpress' : 
     install_dir => '/var/www/html',
   }
