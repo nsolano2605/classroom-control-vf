@@ -33,8 +33,9 @@ class nginx {
     mode => '0664',
   }
 
-  package { $package :
+  package { 'nginx' :
     ensure => present,
+    name   => $package,
   }
 
   service { 'nginx' :
