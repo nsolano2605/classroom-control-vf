@@ -1,10 +1,13 @@
-class nginx {
+class nginx (
+  $root
+){
   case $::osfamily {
     'redhat','debian' : {
       $pacjage = 'nginx'
       $owner   = 'root'
       $group   = 'root'
-      $docroot = '/var/www'
+      $docroot = $root
+      #$docroot = '/var/www'
       $confdir = '/etc/nginx'
       $logdir  = '/var/log/nginx'
     }
@@ -12,7 +15,8 @@ class nginx {
       $package = 'nginx-service'
       $owner   = 'Administrator'
       $group   = 'Administrators'
-      $docroot = 'C:/ProgramData/nginx/html'
+      #$docroot = 'C:/ProgramData/nginx/html'
+      $docroot = $root 
       $confdir = 'C:/ProgramData/nginx'
       $logdir  = 'C:/ProgramData/nginx/logs'
     }

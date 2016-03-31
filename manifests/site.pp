@@ -61,9 +61,9 @@ node default {
   }
   
   include users
-  Class { 'skeleton' : }
-  Class { 'memcached' : }
-  Class { 'nginx' : }
-  Class { 'users::admins' : }
-  #Class { 'aliases' : }
+  class { 'skeleton' : }
+  class { 'memcached' : }
+  #class { 'nginx' : }
+  class { 'users::admins' : }
+  #class { 'aliases' : }
 }
