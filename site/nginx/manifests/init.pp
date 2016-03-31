@@ -1,35 +1,11 @@
 class nginx (
-  $root = 'default',
+  $package = $nginx::params::package,
+  $owner   = $nginx::params::owner,
+  $group   = $nginx::params::group,
+  $docroot = $nginx::params::docroot,
+  $confdir = /$nginx::params::confdir,
+  $logdir  = $nginx::params::logdir,
 ){
-  case $::osfamily {
-    'redhat','debian' : {
-      $pacjage = 'nginx'
-      $owner   = 'root'
-      $group   = 'root'
-      $docroot = $root ? {
-        'default' => '/var/www',
-	default   => $root,
-      }
-      #$docroot = '/var/www'
-      $confdir = '/etc/nginx'
-      $logdir  = '/var/log/nginx'
-    }
-    'windows' : {
-      $package = 'nginx-service'
-      $owner   = 'Administrator'
-      $group   = 'Administrators'
-      #$docroot = 'C:/ProgramData/nginx/html'
-      $docroot = $root ? {
-        'default' => 'C:/ProgramData/nginx/html',
-	default   => $root,
-      }
-      $confdir = 'C:/ProgramData/nginx'
-      $logdir  = 'C:/ProgramData/nginx/logs'
-    }
-    default : {
-      fail("Module ${module_name} is not supported on ${::osfamily}")
-    }
-  }
 
   $user = $::osfamily ? {
     'redhat' => 'nginx',
