@@ -13,7 +13,7 @@ class profile::wordpress {
   user { 'wordpress' :
     ensure => present,
     gid    => 'wordpress',
-  {
+  }
 
   group { 'wordpress' :
     ensure => present,
